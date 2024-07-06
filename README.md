@@ -34,8 +34,8 @@ Clone the Repository:
 
 bash
 
-git clone https://github.com/yourusername/your-repository.git
-cd your-repository
+git clone https://github.com/becominggiant/sprint4_project.git
+cd sprint4_project
 Create and Activate a Conda Environment:
 
 bash
