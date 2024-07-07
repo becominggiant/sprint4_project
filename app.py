@@ -14,10 +14,31 @@ st.title("Car Listings Analysis")
 # # Streamlit header
 st.header("Explore the Dataset")
 
-# # Checkbox to show/hide Price Distribution Histogram
+# Checkbox to show/hide Price Distribution Histogram
 if st.checkbox('Show Price Distribution Histogram'):
-    st.subheader('Price Distribution')
-    fig = px.histogram(df, x='price', title='Price Distribution')
+    st.subheader('Distribution of Car Prices')
+    
+    # Create the histogram with detailed and professional styling
+    fig = px.histogram(
+        df,
+        x='price',
+        title='Distribution of Car Prices',
+        labels={'price': 'Car Price (USD)'},
+        color_discrete_sequence=['#636EFA'],
+        template='presentation',
+    )
+    
+    # Update the layout for a more professional appearance
+    fig.update_layout(
+        title=dict(text='Distribution of Car Prices', x=0.5),
+        xaxis_title='Price (USD)',
+        yaxis_title='Number of Listings',
+        bargap=0.2,
+        plot_bgcolor='rgba(0, 0, 0, 0)',
+        paper_bgcolor='rgba(0, 0, 0, 0)',
+    )
+    
+    # Show the plot
     st.plotly_chart(fig)
 
 # # Checkbox to show/hide Model Year Distribution Histogram
